@@ -9,14 +9,14 @@ import java.util.Arrays;
 
 public class AwsCdkApp {
     public static void main(final String[] args) {
-       App app = new App();
+        App app = new App();
 
-       VpcStack vpcstack = new VpcStack (app, "Vpc");
+        VpcStack vpcstack = new VpcStack(app, "Vpc");
 
         ClusterStack clusterStack = new ClusterStack(app, "Cluster", vpcstack.getVpc());
         clusterStack.addDependency(vpcstack);
 
-       app.synth();
+        app.synth();
     }
 }
 

@@ -7,11 +7,12 @@ import software.constructs.Construct;
 
 public class VpcStack extends Stack {
     private Vpc vpc;
-    public VpcStack (final Construct scope, final String id)
 
-    {this (scope, id, null);}
+    public VpcStack(final Construct scope, final String id) {
+        this(scope, id, null);
+    }
 
-    public VpcStack (final Construct scope, final String id, final StackProps props) {
+    public VpcStack(final Construct scope, final String id, final StackProps props) {
         super(scope, id, props);
 
         Vpc.Builder.create(this, "Vpc01 ")
@@ -20,11 +21,9 @@ public class VpcStack extends Stack {
                 .build();
     }
 
-    public Vpc getVpc(){
+    public Vpc getVpc() {
         return vpc;
     }
-
-
 
 
 }
